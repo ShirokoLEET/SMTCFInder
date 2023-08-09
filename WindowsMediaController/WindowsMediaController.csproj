@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFrameworks>
+		net462;net47;net471;net472;net48;net481;
+		net6.0-windows10.0.17763.0;net6.0-windows10.0.18362.0;net6.0-windows10.0.19041.0;net6.0-windows10.0.22000.0;
+		net7.0-windows10.0.17763.0;net7.0-windows10.0.18362.0;net7.0-windows10.0.19041.0;net7.0-windows10.0.22000.0;
+		net8.0-windows10.0.17763.0;net8.0-windows10.0.18362.0;net8.0-windows10.0.19041.0;net8.0-windows10.0.22000.0
+	</TargetFrameworks>
+    <PackageId>Dubya.WindowsMediaController</PackageId>
+    <Version>2.5.0</Version>
+    <Authors>DubyaDude</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/DubyaDude/WindowsMediaController</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/DubyaDude/WindowsMediaController/</RepositoryUrl>
+	<RepositoryType>Git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <Description>
+		Provides a wrapper for developers to more easily get information from and interact with the Windows 10/11 OS media interface (Also referred to Windows System Media Transport Controls (SMTC)).
+		Allows Playback Control on individual Media Sessions (Spotify, Chrome etc), Getting media information of currently playing (Song, Author, Thumbnail etc), and more</Description>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageTags>music;audio;media;controller;windows;windows10;windows11;smtc;mtc</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="..\docs\images\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462' or '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net471' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48' or '$(TargetFramework)' == 'net481'">
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.17763.1000" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>
